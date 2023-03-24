@@ -3,6 +3,8 @@ Automação para instalação de diversas ferramentas do mundo DevOps como: Ansi
 O objetivo desse script é acelerar o setup inicial de uma máquina de dev e/ou laboratório para desenvolvermos nossos
 projetos.
 
+Sinta-se livre para compartilhar ou colaborar com esse respositório.
+
 ### Ferramentas IaC
 
 - Terraform [ok]
