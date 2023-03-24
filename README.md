@@ -1,5 +1,6 @@
 # Canivete-DevOps
 Automação para instalação de diversas ferramentas do mundo DevOps como: Ansible, Terraform, Docker e muito mais.
+
 O objetivo desse script é acelerar o setup inicial de uma máquina de dev e/ou laboratório para desenvolvermos nossos
 projetos.
 
