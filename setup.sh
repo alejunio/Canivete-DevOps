@@ -53,7 +53,7 @@ while true; do
     clear
     echo "Menu de opções:"
     echo "+-------+---------+-------------------+-------+--------------------------------------+"
-    echo "|  IaC            |  Container        | CI/Cd         |  Monitoramento               |"
+    echo "|  IaC            |  Container        | CI/Cd         |  Observabilidade e Logs      |"
     echo "+-----------------+------------------------------------------------------------------+"
     echo "|  1 - Terraform  |  4 - Docker       |  7 - Harness  |   10 - Grafana Prometheus    |"
     echo "|  2 - Packer     |  5 - Portainer    |  8 - Argo CD  |   11 - Grafana Loki          |"
