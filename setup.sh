@@ -30,8 +30,6 @@ bold=`echo -en "\e[1m"`
 
 # Variaveis
 source .env
-# Funcoes
-source funcoes.sh 
 # Tools 
 source tools.sh
 # Core basico
