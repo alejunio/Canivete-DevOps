@@ -4,14 +4,14 @@ Automação para instalação de diversas ferramentas DevOps que utilizamos no d
 
 ### Ferramentas IaC
 
-- Terraform
+- Terraform [ok]
 - Packer
 - Ansible
 
 
 ### Ferramentas Container 
 
-- Docker
+- Docker [ok]
 - Portainer
 - Traefik 
 
