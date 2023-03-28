@@ -5,6 +5,9 @@ O objetivo desse script é acelerar o setup inicial de uma máquina de dev e/ou 
 
 Sinta-se livre para compartilhar ou colaborar com esse respositório.
 
+## Confira o lançamento das features 
+https://github.com/users/alejunio/projects/1
+
 ### Ferramentas IaC
 
 - Terraform [ok]
@@ -31,3 +34,4 @@ Sinta-se livre para compartilhar ou colaborar com esse respositório.
 - Gafana e Prometheus
 - Grafana Loki 
 - Graylog
+
