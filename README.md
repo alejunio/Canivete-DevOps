@@ -28,6 +28,6 @@ Sinta-se livre para compartilhar ou colaborar com esse respositório.
 
 ### Ferramentas Observabilidade e Logs
 
-- Gaafana e Prometheus
+- Gafana e Prometheus
 - Grafana Loki 
 - Graylog
