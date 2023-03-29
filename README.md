@@ -40,12 +40,17 @@ https://github.com/users/alejunio/projects/1
 
 ## Instalação 
 
-[1] - Clone o repositório
+Clone o repositório
 ```shell
-git clone https://github.com/alejunio/Canivete-DevOps.git
+cd /home/ && git clone https://github.com/alejunio/Canivete-DevOps.git
 ```
 
-[2] - Instale os pacotes essênciais
+Instale os pacotes essênciais
 ```shell
-chmod +x *.sh Canivete-DevOps/ && bash  Canivete-DevOps/init.sh
+chmod +x *.sh /home/Canivete-DevOps/ && bash /home/Canivete-DevOps/init.sh
+```
+
+Execute o Canivete DevOps
+```shell
+bash /home/Canivete-DevOps/setup.sh
 ```
