@@ -82,7 +82,7 @@ fi
 ##  ------------------------------------------------------------------------  ##
 
 # Instalacao do Docker e Docker compose
-docker () {
+setupdocker () {
 # Verifica se o Docker está instalado
 if ! command -v docker &> /dev/null
 then
@@ -93,3 +93,62 @@ then
     curl -fsSL https://get.docker.com | bash 
 fi
 }
+
+##  ------------------------------------------------------------------------  ##
+##  INSTALACAO DO ANSIBLE
+##  ------------------------------------------------------------------------  ##
+
+# Instalacao do Ansible
+setupdocker () {
+
+# Verifica se o Ansible está instalado
+if ! command -v ansible &> /dev/null
+if [[ "$OS" == "Debian GNU/Linux" ]] || [[ "$OS" == "Ubuntu" ]]; then
+    
+    # Atualiza o cache do apt
+    sudo apt update
+    # Instala as dependências necessárias
+    sudo apt install -y software-properties-common
+    sudo apt install -y python3 git unzip htop 
+    # Adiciona o repositório do Ansible
+    sudo apt-add-repository --yes --update ppa:ansible/ansible
+    # Instala o Ansible
+    sudo apt install -y ansible
+    # Configura Host Ansible Local
+    cat > /etc/ansible/hosts <<END
+    [Control]
+    127.0.0.1 ansible_connection=local
+END
+    
+elif [[ "$OS" == "CentOS Linux" ]] && [[ "$(cat /etc/centos-release | awk '{print $4}' | awk -F '.' '{print $1}')" == "7" ]]; then
+    # Instala as dependências necessárias
+    yum install -y epel-release
+    # Instala o Ansible
+    sudo yum install -y ansible
+    # Configura Host Ansible Local
+    cat > /etc/ansible/hosts <<END
+    [Control]
+    127.0.0.1 ansible_connection=local
+END
+
+elif [[ "$OS" == "CentOS Linux" ]] && [[ "$(cat /etc/centos-release | awk '{print $4}' | awk -F '.' '{print $1}')" == "8" ]]; then
+    # Instala as dependências necessárias
+    yum install -y epel-release
+    # Instala o Ansible
+    yum install -y @ansible
+    # Configura Host Ansible Local
+    cat > /etc/ansible/hosts <<END
+    [Control]
+    127.0.0.1 ansible_connection=local
+END   
+
+else
+    # Incompatible system
+    echo "Sistema Incompatível!"
+fi
+fi
+}
+
+##  ------------------------------------------------------------------------  ##
+##  INSTALACAO DO PACKER
+##  ------------------------------------------------------------------------  ##
