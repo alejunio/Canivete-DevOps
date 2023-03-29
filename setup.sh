@@ -82,7 +82,7 @@ while true; do
             echo "Instalando Docker..."
             # Instalacao do Docker
             read -p "Pressione enter para continuar..."
-            docker
+            setupdocker
             clear 
             echo "Versões Docker e Docker-compose instalados" 
             docker --version
