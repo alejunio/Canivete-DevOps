@@ -99,10 +99,17 @@ fi
 ##  ------------------------------------------------------------------------  ##
 
 # Instalacao do Ansible
-setupdocker () {
+setupansible () {
 
 # Verifica se o Ansible está instalado
 if ! command -v ansible &> /dev/null
+then
+    clear 
+    echo "Ansible não está instalado, instalando terraform..."
+    sleep 3
+    # Instalação do terraform
+    # Perform actions based on OS
+
 if [[ "$OS" == "Debian GNU/Linux" ]] || [[ "$OS" == "Ubuntu" ]]; then
     
     # Atualiza o cache do apt

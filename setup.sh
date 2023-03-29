@@ -77,6 +77,13 @@ while true; do
             echo "Instalando Ansible..."
             # Comando para instalar o Ansible
             read -p "Pressione enter para continuar..."
+            setupansible
+            echo 
+            echo "Versao Ansible" 
+            ansible --version | grep core
+            echo 
+            echo "Voltando ao menu..."
+            sleep 5 
             ;;
         4)
             echo "Instalando Docker..."
