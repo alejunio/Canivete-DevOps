@@ -40,13 +40,6 @@ source init.sh
 ##  MENU DE OPCOES
 ##  ------------------------------------------------------------------------  ##
 
-# Inicializando o ini.sh para instalacao de ferramentas basicas
-bash init.sh
-
-##  ------------------------------------------------------------------------  ##
-##  MENU DE OPCOES
-##  ------------------------------------------------------------------------  ##
-
 while true; do
     clear
     echo "Menu de opções:"
