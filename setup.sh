@@ -43,21 +43,33 @@ source init.sh
 while true; do
     clear
     echo "Menu de opções:"
-    echo "+-------+---------+-------------------+-------+--------------------------------------+"
-    echo "|  IaC            |  Container        | CI/Cd         |  Observabilidade e Logs      |"
-    echo "+-----------------+------------------------------------------------------------------+"
-    echo "|  1 - Terraform  |  4 - Docker       |  7 - Harness  |   10 - Grafana Prometheus    |"
-    echo "|  2 - Packer     |  5 - Portainer    |  8 - Argo CD  |   11 - Grafana Loki          |"
-    echo "|  3 - Ansible    |  6 - Traefik      |  9 - GoCD     |   12 - Graylog               |"
-    echo "+-----------------------------------------------------------------------------------+"
-    echo "|  13 - Sair                                                                         |"
-    echo "+------------------------------------------------------------------------------------+"
+    echo "+--------------------+-------------------+"
+    echo "|  IaC               |  Container        |"
+    echo "+--------------------+-------------------+"
+    echo "|  1 - Terraform     |  4 - Docker       |"  
+    echo "|  2 - Packer        |  5 - Portainer    |"  
+    echo "|  3 - Ansible       |  6 - Traefik      |"  
+    echo "+--------------------+-------------------+"
+    echo "|  CI/Cd             |  Observabilidade  |" 
+    echo "+--------------------+-------------------+"
+    echo "|  7 - Harness       | 10 - Grafana      |"  
+    echo "|  8 - Argo CD       | 11 - Prometheus   |"  
+    echo "|  9 - GoCD          |                   |"  
+    echo "+--------------------+-------------------+"
+    echo "|  Logs              |  CLI Clouds       |" 
+    echo "+--------------------+-------------------+"
+    echo "|  12 - Grafana Loki | 14 - AWS CLI      |" 
+    echo "|  13 - Graylog      | 15 - GCP CLI      |"  
+    echo "|                    | 16 - DigitalOcean |" 
+    echo "+--------------------+-------------------+"
+    echo "|  17 - Sair                             |"                                               
+    echo "+----------------------------------------+"
     echo 
     read -p "Digite o número da opção desejada: " opcao
 
     case $opcao in
         1)
-            echo "Instalando Terraform..."
+            echo "Iniciando Setup Terraform..."
             # Instalacao do Terraform
             read -p "Pressione enter para continuar..."
             setupterraform
@@ -69,12 +81,12 @@ while true; do
             sleep 5
             ;;
         2)
-            echo "Instalando Packer..."
+            echo "Iniciando Setup Packer..."
             # Comando para instalar o Packer
             read -p "Pressione enter para continuar..."
             ;;
         3)
-            echo "Instalando Ansible..."
+            echo "Iniciando Setup Ansible..."
             # Comando para instalar o Ansible
             read -p "Pressione enter para continuar..."
             setupansible
@@ -86,7 +98,7 @@ while true; do
             sleep 5 
             ;;
         4)
-            echo "Instalando Docker..."
+            echo "Iniciando Setup Docker..."
             # Instalacao do Docker
             read -p "Pressione enter para continuar..."
             setupdocker
@@ -99,42 +111,42 @@ while true; do
             sleep 5   
             ;;
         5)
-            echo "Instalando Portainer..."
+            echo "Iniciando Setup Portainer..."
             # Comando para instalar o Portainer
             read -p "Pressione enter para continuar..."
             ;;
         6)
-            echo "Instalando Traefik..."
+            echo "Iniciando Setup Traefik..."
             # Comando para instalar o Traefik
             read -p "Pressione enter para continuar..."
             ;;
         7)
-            echo "Instalando Harness..."
+            echo "Iniciando Setup Harness..."
             # Comando para instalar o Harness
             read -p "Pressione enter para continuar..."
             ;;
         8)
-            echo "Instalando Grafana..."
+            echo "Iniciando Setup Grafana..."
             # Comando para instalar o Grafana
             read -p "Pressione enter para continuar..."
             ;;
         9)
-            echo "Instalando Grafana..."
+            echo "Iniciando Setup Grafana..."
             # Comando para instalar o Grafana
             read -p "Pressione enter para continuar..."
             ;;
         10)
-            echo "Instalando Grafana..."
+            echo "Iniciando Setup Grafana..."
             # Comando para instalar o Grafana
             read -p "Pressione enter para continuar..."
             ;;
         11)
-            echo "Instalando Grafana..."
+            echo "Iniciando Setup Grafana..."
             # Comando para instalar o Grafana
             read -p "Pressione enter para continuar..."
             ;;
         12)
-            echo "Instalando Grafana..."
+            echo "Iniciando Setup Grafana..."
             # Comando para instalar o Grafana
             read -p "Pressione enter para continuar..."
             ;;
