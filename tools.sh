@@ -102,10 +102,10 @@ fi
 setupansible () {
 
 # Verifica se o Ansible está instalado
-if ! command -v ansible &> /dev/null
+if ! command --version ansible &> /dev/null
 then
     clear 
-    echo "Ansible não está instalado, instalando terraform..."
+    echo "Ansible não está instalado, instalando..."
     sleep 3
     # Instalação do terraform
     # Perform actions based on OS
@@ -122,10 +122,7 @@ if [[ "$OS" == "Debian GNU/Linux" ]] || [[ "$OS" == "Ubuntu" ]]; then
     # Instala o Ansible
     sudo apt install -y ansible
     # Configura Host Ansible Local
-    cat > /etc/ansible/hosts <<END
-    [Control]
-    127.0.0.1 ansible_connection=local
-END
+    rm -r /etc/ansible/hots && cp src/ansible_hosts.sh /etc/ansible/hots
     
 elif [[ "$OS" == "CentOS Linux" ]] && [[ "$(cat /etc/centos-release | awk '{print $4}' | awk -F '.' '{print $1}')" == "7" ]]; then
     # Instala as dependências necessárias
@@ -133,10 +130,8 @@ elif [[ "$OS" == "CentOS Linux" ]] && [[ "$(cat /etc/centos-release | awk '{prin
     # Instala o Ansible
     sudo yum install -y ansible
     # Configura Host Ansible Local
-    cat > /etc/ansible/hosts <<END
-    [Control]
-    127.0.0.1 ansible_connection=local
-END
+    rm -r /etc/ansible/hots && cp src/ansible_hosts.sh /etc/ansible/hots
+
 
 elif [[ "$OS" == "CentOS Linux" ]] && [[ "$(cat /etc/centos-release | awk '{print $4}' | awk -F '.' '{print $1}')" == "8" ]]; then
     # Instala as dependências necessárias
@@ -144,10 +139,8 @@ elif [[ "$OS" == "CentOS Linux" ]] && [[ "$(cat /etc/centos-release | awk '{prin
     # Instala o Ansible
     yum install -y @ansible
     # Configura Host Ansible Local
-    cat > /etc/ansible/hosts <<END
-    [Control]
-    127.0.0.1 ansible_connection=local
-END   
+    rm -r /etc/ansible/hots && cp src/ansible_hosts.sh /etc/ansible/hots
+   
 
 else
     # Incompatible system
