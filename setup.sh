@@ -84,6 +84,10 @@ while true; do
             echo "Iniciando Setup Packer..."
             # Comando para instalar o Packer
             read -p "Pressione enter para continuar..."
+            setuppacker
+            echo 
+            echo "Versao Packer" 
+            packer -v
             ;;
         3)
             echo "Iniciando Setup Ansible..."

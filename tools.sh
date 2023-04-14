@@ -152,3 +152,54 @@ fi
 ##  ------------------------------------------------------------------------  ##
 ##  INSTALACAO DO PACKER
 ##  ------------------------------------------------------------------------  ##
+# Instalacao do Packer
+setuppacker () {
+
+# Verifica se o Packer está instalado
+if ! command --version Packer &> /dev/null
+then
+    clear 
+    echo "Packer não está instalado, instalando..."
+    sleep 3
+    # Instalação do Packer
+    # Perform actions based on OS
+
+if [[ "$OS" == "Debian GNU/Linux" ]] || [[ "$OS" == "Ubuntu" ]]; then
+    
+
+    # Verifica se a chave GPG já está instalada
+    if [[ $(sudo apt-key list | grep "HashiCorp" | wc -l) -gt 0 ]]; then
+        echo "A chave GPG já está instalada"
+    else
+        echo "Instalando a chave GPG"
+        wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+    fi
+
+    # Instalacao
+    sudo apt-get update && sudo apt-get -y install packer
+     
+    
+elif [[ "$OS" == "CentOS Linux" ]] && [[ "$(cat /etc/centos-release | awk '{print $4}' | awk -F '.' '{print $1}')" == "7" ]]; then
+    # Instala as dependências necessárias
+    yum install -y yum-utils
+    # Add Repositorio
+    sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+    # Instalacao
+    sudo yum -y install packer
+
+
+elif [[ "$OS" == "CentOS Linux" ]] && [[ "$(cat /etc/centos-release | awk '{print $4}' | awk -F '.' '{print $1}')" == "8" ]]; then
+    # Instala as dependências necessárias
+    yum install -y yum-utils
+    # Add Repositorio
+    sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+    # Instalacao
+    sudo yum -y install packer
+   
+
+else
+    # Incompatible system
+    echo "Sistema Incompatível!"
+fi
+fi
+}
