@@ -123,7 +123,13 @@ while true; do
             echo "Iniciando Setup Portainer..."
             # Comando para instalar o Portainer
             read -p "Pressione enter para continuar..."
+            clear 
             setupportainer
+            clear 
+            echo "Portainer configurado!"
+            echo "Finalize a configuração acessando http://seu_ip:9000" 
+            echo "Voltando ao menu..."
+            sleep 5 
             ;;
         6)
             echo "Iniciando Setup Traefik..."
