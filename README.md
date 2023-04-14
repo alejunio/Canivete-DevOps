@@ -27,7 +27,7 @@ https://github.com/users/alejunio/projects/1
 #### Ferramentas CI/CD
 
 - Harness
-- Argo CD
+- Jenkis
 - GoCD
 
 

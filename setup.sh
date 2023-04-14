@@ -58,7 +58,7 @@ while true; do
     echo "|  CI/Cd             |  Observabilidade  |" 
     echo "+--------------------+-------------------+"
     echo "|  7 - Harness       | 10 - Grafana      |"  
-    echo "|  8 - Argo CD       | 11 - Prometheus   |"  
+    echo "|  8 - Jenkis        | 11 - Prometheus   |"  
     echo "|  9 - GoCD          |                   |"  
     echo "+--------------------+-------------------+"
     echo "|  Logs              |  CLI Clouds       |" 
@@ -142,8 +142,8 @@ while true; do
             read -p "Pressione enter para continuar..."
             ;;
         8)
-            echo "Iniciando Setup Grafana..."
-            # Comando para instalar o Grafana
+            echo "Iniciando Setup Jenkis..."
+            # Comando para instalar o Jenkis
             read -p "Pressione enter para continuar..."
             ;;
         9)
