@@ -122,7 +122,7 @@ if [[ "$OS" == "Debian GNU/Linux" ]] || [[ "$OS" == "Ubuntu" ]]; then
     # Instala o Ansible
     sudo apt install -y ansible
     # Configura Host Ansible Local
-    rm -r /etc/ansible/hots && cp src/ansible_hosts.sh /etc/ansible/hots
+    rm -r /etc/ansible/hosts && bash src/ansible_hosts.sh 
     
 elif [[ "$OS" == "CentOS Linux" ]] && [[ "$(cat /etc/centos-release | awk '{print $4}' | awk -F '.' '{print $1}')" == "7" ]]; then
     # Instala as dependências necessárias
@@ -130,7 +130,7 @@ elif [[ "$OS" == "CentOS Linux" ]] && [[ "$(cat /etc/centos-release | awk '{prin
     # Instala o Ansible
     sudo yum install -y ansible
     # Configura Host Ansible Local
-    rm -r /etc/ansible/hots && cp src/ansible_hosts.sh /etc/ansible/hots
+    rm -r /etc/ansible/hosts && bash src/ansible_hosts.sh
 
 
 elif [[ "$OS" == "CentOS Linux" ]] && [[ "$(cat /etc/centos-release | awk '{print $4}' | awk -F '.' '{print $1}')" == "8" ]]; then
@@ -139,7 +139,7 @@ elif [[ "$OS" == "CentOS Linux" ]] && [[ "$(cat /etc/centos-release | awk '{prin
     # Instala o Ansible
     yum install -y @ansible
     # Configura Host Ansible Local
-    rm -r /etc/ansible/hots && cp src/ansible_hosts.sh /etc/ansible/hots
+    rm -r /etc/ansible/hosts && bash src/ansible_hosts.sh
    
 
 else
