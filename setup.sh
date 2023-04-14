@@ -31,7 +31,12 @@ bold=`echo -en "\e[1m"`
 # Variaveis
 source .env
 # Tools 
-source tools.sh
+source cicd.sh
+source clouds.sh
+source container.sh
+source iac.sh
+source logs.sh
+source observabilidade.sh
 # Core basico
 source init.sh
 
@@ -118,6 +123,7 @@ while true; do
             echo "Iniciando Setup Portainer..."
             # Comando para instalar o Portainer
             read -p "Pressione enter para continuar..."
+            setupportainer
             ;;
         6)
             echo "Iniciando Setup Traefik..."
