@@ -47,7 +47,7 @@ cd /home/ && git clone https://github.com/alejunio/Canivete-DevOps.git
 
 Instale os pacotes essênciais
 ```shell
-chmod +x /home/Canivete-DevOps/*.sh && cd /home/Canivete-DevOps/ && bash init.sh
+chmod +x /home/Canivete-DevOps/*.sh && cd /home/Canivete-DevOps/
 ```
 
 Execute o Canivete DevOps
