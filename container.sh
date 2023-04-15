@@ -66,8 +66,18 @@ fi
 setupportainer () {
 # Verifica se o Docker está instalado
 if ! command -v docker &> /dev/null
+     echo "Docker está instalado, instalando o Portainer..."
+    
 then
-    clear 
+    # Criando volume para portainer 
+    docker volume create portainer_data
+    # Criando container portainer
+    docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+    # Instalando agente portainer
+    docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes portainer/agent:2.17.1
+    
+else 
+   clear 
     echo "Docker não está instalado, instalando Docker e o Portainer..."
     sleep 3
     # Instalação do Docker
@@ -78,6 +88,6 @@ then
     docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
     # Instalando agente portainer
     docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes portainer/agent:2.17.1
-    
+
 fi
 }
